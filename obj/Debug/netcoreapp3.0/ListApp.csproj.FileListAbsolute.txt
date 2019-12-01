@@ -1,0 +1,11 @@
+C:\Users\pawra\Desktop\Новая папка\ListApp\bin\Debug\netcoreapp3.0\ListApp.exe
+C:\Users\pawra\Desktop\Новая папка\ListApp\bin\Debug\netcoreapp3.0\ListApp.deps.json
+C:\Users\pawra\Desktop\Новая папка\ListApp\bin\Debug\netcoreapp3.0\ListApp.runtimeconfig.json
+C:\Users\pawra\Desktop\Новая папка\ListApp\bin\Debug\netcoreapp3.0\ListApp.runtimeconfig.dev.json
+C:\Users\pawra\Desktop\Новая папка\ListApp\bin\Debug\netcoreapp3.0\ListApp.dll
+C:\Users\pawra\Desktop\Новая папка\ListApp\bin\Debug\netcoreapp3.0\ListApp.pdb
+C:\Users\pawra\Desktop\Новая папка\ListApp\obj\Debug\netcoreapp3.0\ListApp.csprojAssemblyReference.cache
+C:\Users\pawra\Desktop\Новая папка\ListApp\obj\Debug\netcoreapp3.0\ListApp.AssemblyInfoInputs.cache
+C:\Users\pawra\Desktop\Новая папка\ListApp\obj\Debug\netcoreapp3.0\ListApp.AssemblyInfo.cs
+C:\Users\pawra\Desktop\Новая папка\ListApp\obj\Debug\netcoreapp3.0\ListApp.dll
+C:\Users\pawra\Desktop\Новая папка\ListApp\obj\Debug\netcoreapp3.0\ListApp.pdb

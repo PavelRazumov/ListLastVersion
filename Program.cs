@@ -8,13 +8,15 @@ namespace ListApp
         static void Main(string[] args)
         {
             LinkedList<int> linkedList = new LinkedList<int>();
+            linkedList.Add(1001);
+            linkedList.Add(50);
+            linkedList.Add(100);
 
-            linkedList.Insert(0, 100);
-            linkedList.Insert(1, 1001);
-            linkedList.Insert(2, 1002);
-            linkedList.Add(12);
-            linkedList.Add(120);
-            linkedList.Add(8);
+
+            linkedList.Insert(0, 20);
+            linkedList.Insert(1, 50);
+            linkedList.Insert(4, 90);
+            linkedList.Insert(4, 80);
 
             foreach (var item in linkedList)
             {
@@ -24,17 +26,9 @@ namespace ListApp
             Console.WriteLine(linkedList.Contains(100));
             Console.WriteLine(linkedList.Contains(8));
 
-            linkedList.Insert(4, 100);
             linkedList.Contains(100);
 
-            Console.WriteLine(linkedList.Contains(100));
-            linkedList.RemoveAt(1);
-
-            linkedList.RemoveAt(100);
-            foreach (var item in linkedList)
-            {
-                Console.WriteLine(item);
-            }
+           
            
         }
     }

@@ -13,9 +13,19 @@ namespace ListApp.LinkedList
 
         int count = 0;
 
-        public int Count { get { return count; } }
+        public int Count { get { return count; } 
+            set {
+                count = value;
+            } 
+        }
         public bool isEmpty { get { return count == 0; } }
-
+        
+        public LinkedList()
+        {
+            head = null;
+            tail = null;
+            Count = 0;
+        }
         public bool Contains(T data)
         {
             Item<T> current = head;
@@ -35,44 +45,71 @@ namespace ListApp.LinkedList
             Item<T> item = new Item<T>(data);
             if (head == null)
             {
+                Console.WriteLine("data - ", data);
                 head = item;
+                tail = item;
+                count = 1;
             }
+            
             else
             {
                 tail.Next = item;
+                tail = item;
+                count++;
             }
-
-            tail = item;
-            count++;
+           
         }
 
         public void Insert(int index, T data)
         {
-            // exception if index < 0
-            if (index > count)
+            // exception if index > count
+            if (index >= count)
             {
-               
+                //Console.WriteLine("lalalal");
                 throw new ArgumentException();
                 
             }
 
             else if (index == 0)
             {
-                Add(data);
-                return;
-            }
-
-            int currentIndex = 1;
-            Item<T> currentData = head;
-            while (currentData != null)
-            {
-                if (currentIndex == index)
+                if (Count == 0)
                 {
                     Add(data);
                 }
-                currentIndex++;
-                currentData = currentData.Next;
+
+                else
+                {
+                    var newItem = new Item<T>(data);
+                    newItem.Next = head;
+                    head = newItem;
+                    count++;
+                }
             }
+             
+            else if (index == (count-1))
+            {
+                Console.WriteLine("index -", index);
+                Add(data);
+            }
+
+            else
+            {
+                int currentIndex = 1;
+                Item<T> currentData = head;
+                while (currentData != null)
+                {
+                    if (currentIndex == index)
+                    {
+                        var newItem = new Item<T>(data);
+                        newItem.Next = currentData.Next;
+                        currentData.Next = newItem;
+                        count++;
+                    }
+                    currentIndex++;
+                    currentData = currentData.Next;
+                }
+            }
+           
 
             return;
         }
@@ -96,28 +133,57 @@ namespace ListApp.LinkedList
         public void RemoveAt(int index)
         {
             // Exception
-            if (index > (count - 1))
+            if (index > (count) || index < 0)
             {
                 throw new ArgumentException();
             }
 
-            // Exception
-            else if (index < 0)
+            else if (index == 0)
             {
-                throw new ArgumentException();
-            }
-
-            Item<T> current = head;
-            int currentIndex = 0;
-            while (current != null)
-            {
-                if (currentIndex == index)
+                if (Count == 1)
                 {
-                    Remove(current.Data);
+                    head = tail = null;
+                    count = 0;
                 }
-                current = current.Next;
-                currentIndex++;
+                else
+                {
+                    head = head.Next;
+                    count--;
+                }
             }
+
+            else if (index == count - 1)
+            {
+                Item<T> current = head;
+
+                while (current != null)
+                {
+                    current = current.Next;
+                }
+
+                tail = current;
+                count--;
+            }
+
+            else
+            {
+                Item<T> current = head;
+                Item<T> prev = head;
+                int currentIndex = 0;
+                while (current != null)
+                {
+                    if (currentIndex == index)
+                    {
+                        prev.Next = current.Next;
+                        count--;
+                    }
+
+                    prev = current;
+                    current = current.Next;
+                    currentIndex++;
+                }
+            }
+           
         }
 
         public bool Remove(T data)

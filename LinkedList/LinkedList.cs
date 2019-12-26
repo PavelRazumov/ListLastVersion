@@ -63,7 +63,7 @@ namespace ListApp.LinkedList
         public void Insert(int index, T data)
         {
             // exception if index > count
-            if (index >= count)
+            if (index > count)
             {
                 //Console.WriteLine("lalalal");
                 throw new ArgumentException();
@@ -86,9 +86,8 @@ namespace ListApp.LinkedList
                 }
             }
              
-            else if (index == (count-1))
+            else if (index == (count))
             {
-                Console.WriteLine("index -", index);
                 Add(data);
             }
 
